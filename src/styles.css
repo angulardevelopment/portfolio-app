@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+body {
+    font-family: 'Lato', arial, sans-serif;
+    color: #434343;
+    background: #DAE3E7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
