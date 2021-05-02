@@ -1,83 +1,90 @@
 <div class="container">
+  <!-- Portfolio Item Heading -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">
+        {{ specificDetails?.proName }}
+        <small>{{ specificDetails?.subheading }}</small>
+      </h1>
+    </div>
+  </div>
+  <!-- /.row -->
 
-    <!-- Portfolio Item Heading -->
+  <!-- Portfolio Item Row -->
+  <div class="row">
+    <div class="col-md-8">
+      <img
+        class="img-responsive"
+        src="../../assets/proimages/{{ specificDetails?.mainImg }}"
+        alt=""
+      />
+    </div>
+
+    <div class="col-md-4">
+      <h3>Project Description</h3>
+      <p>{{ specificDetails?.proDesc }}</p>
+      <h3>Other Details</h3>
+      <ul *ngFor="let i of specificDetails?.otherInfo">
+        <li>{{ i.p1 }}</li>
+      </ul>
+      <h3>Technologies used</h3>
+      <p>{{ specificDetails?.techUsed }}</p>
+
+      <h3>Github link</h3>
+      <a href="{{ specificDetails?.gitLink }}" target="_blank"
+        ><p>{{ specificDetails?.gitLink }}</p></a
+      >
+      <h3>Webapp link</h3>
+      <a href="{{ specificDetails?.prolink }}" target="_blank">
+        <p>{{ specificDetails?.prolinkdesc }}</p></a
+      >
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <!-- Related Projects Row -->
+  <div class="row">
+    <div class="col-lg-12">
+      <h3 class="page-header">Project Images</h3>
+    </div>
+
+    <div
+      class="col-sm-3 col-xs-6"
+      *ngFor="let j of specificDetails.otherImg; let k = index"
+    >
+      <!-- <a href="http://placehold.it/500x300"> -->
+      <img
+        id="myImg"
+        (click)="showimg(j)"
+        class="img-responsive portfolio-item"
+        src="../../assets/proimages/{{ j?.img1 }}"
+        alt=""
+        style="width: 100%; max-width: 300px"
+        #getPath
+      />
+      <!-- </a> -->
+    </div>
+
+    <!-- <img id="myImg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wisconsin.svg" alt="Snow" style="width:100%;max-width:300px"> -->
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close" (click)="hidepreviewpop()">&times;</span>
+      <img class="modal-content" id="img01" />
+      <div id="caption"></div>
+    </div>
+  </div>
+  <!-- /.row -->
+
+  <hr />
+
+  <!-- Footer -->
+  <footer>
     <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">{{specificDetails?.proName}}
-                <small>{{specificDetails?.subheading}}</small>
-            </h1>
-        </div>
+      <div class="col-lg-12">
+        <!-- <p>Copyright &copy; Your Website 2014</p> -->
+      </div>
     </div>
     <!-- /.row -->
-
-    <!-- Portfolio Item Row -->
-    <div class="row">
-
-        <div class="col-md-8">
-            <img class="img-responsive" src="../../assets/proimages/{{specificDetails?.mainImg}}" alt="">
-        </div>
-
-        <div class="col-md-4">
-            <h3>Project Description</h3>
-            <p>{{specificDetails?.proDesc}}</p>
-            <h3>Other Details</h3>
-            <ul *ngFor="let i of specificDetails?.otherInfo">
-                <li>{{i.p1}}</li>
-            </ul>
-    <h3>
-    Technologies used
-    </h3>
-    <p>{{specificDetails?.techUsed}}</p>
-
-      <h3>
-  Github link
-    </h3>
-    <a href="{{specificDetails?.gitLink}}" target="_blank" ><p>{{specificDetails?.gitLink}}</p></a>
-    <h3>
-  Webapp link
-    </h3>
-   <a href="{{specificDetails?.prolink}}" target="_blank" >  <p>{{specificDetails?.prolinkdesc}}</p></a>
-        </div>
-
-    </div>
-    <!-- /.row -->
-
-    <!-- Related Projects Row -->
-    <div class="row">
-
-        <div class="col-lg-12">
-            <h3 class="page-header">Project Images</h3>
-        </div>
-
-        <div class="col-sm-3 col-xs-6" *ngFor="let j of specificDetails.otherImg;let k=index">
-            <!-- <a href="http://placehold.it/500x300"> -->
-                <img id="myImg" (click)="showimg(j)" class="img-responsive portfolio-item" src="../../assets/proimages/{{j?.img1}}" alt="" style="width:100%;max-width:300px" #getPath>
-            <!-- </a> -->
-        </div>
-
-        <!-- <img id="myImg" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/wisconsin.svg" alt="Snow" style="width:100%;max-width:300px"> -->
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-          <span class="close" (click)="hidepreviewpop()">&times;</span>
-          <img class="modal-content" id="img01">
-          <div id="caption"></div>
-        </div>
- 
-
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- <p>Copyright &copy; Your Website 2014</p> -->
-            </div>
-        </div>
-        <!-- /.row -->
-    </footer>
-
+  </footer>
 </div>
