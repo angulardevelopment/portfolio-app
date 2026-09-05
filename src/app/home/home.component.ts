@@ -7,7 +7,8 @@ declare var GitHubActivity;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  standalone: false
 })
 export class HomeComponent {
   projectList = [{ name: 'name', imageName: 'mp1.PNG', projName: "projName", projDesc: " sit amet, consectetur adipiscin" },

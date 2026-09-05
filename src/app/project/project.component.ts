@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { FLAGS } from '@angular/core/src/render3/interfaces/view';
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
+  standalone: false
 })
 export class ProjectComponent implements OnInit {
   username: any;
